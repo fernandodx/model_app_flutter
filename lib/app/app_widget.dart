@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:model_app_flutter/app/pages/home_page.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class AppWidget extends StatelessWidget {
 
@@ -13,7 +13,15 @@ class AppWidget extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         brightness: Brightness.dark
       ),
-      home: HomePage(title: 'Flutter Demo Home Page',),
-    );
+      // home: HomePage(title: 'Flutter Demo Home Page',),
+      initialRoute: NamedRoutes.HOME,
+    ).modular();
   }
+}
+
+ abstract class NamedRoutes {
+
+  static String get HOME  => "/";
+  static String get OTHER  => "/other";
+
 }
